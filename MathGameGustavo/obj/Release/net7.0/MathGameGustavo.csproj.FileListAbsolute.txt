@@ -1,0 +1,14 @@
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\bin\Release\net7.0\MathGameGustavo.exe
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\bin\Release\net7.0\MathGameGustavo.deps.json
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\bin\Release\net7.0\MathGameGustavo.runtimeconfig.json
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\bin\Release\net7.0\MathGameGustavo.dll
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\bin\Release\net7.0\MathGameGustavo.pdb
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\obj\Release\net7.0\MathGameGustavo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\obj\Release\net7.0\MathGameGustavo.AssemblyInfoInputs.cache
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\obj\Release\net7.0\MathGameGustavo.AssemblyInfo.cs
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\obj\Release\net7.0\MathGameGustavo.csproj.CoreCompileInputs.cache
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\obj\Release\net7.0\MathGameGustavo.dll
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\obj\Release\net7.0\refint\MathGameGustavo.dll
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\obj\Release\net7.0\MathGameGustavo.pdb
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\obj\Release\net7.0\MathGameGustavo.genruntimeconfig.cache
+C:\Users\2000g\Music\ProjectsAcademy\MathGameGustavo\MathGameGustavo\obj\Release\net7.0\ref\MathGameGustavo.dll
