@@ -46,7 +46,6 @@
                         isGameOn = false;
                         break;
                     default:
-                        Console.Clear();
                         break;
                 }
             } while (isGameOn);

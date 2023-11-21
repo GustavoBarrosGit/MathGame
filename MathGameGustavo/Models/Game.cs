@@ -5,6 +5,8 @@
         public DateTime Date { get; set; }
         public int Score { get; set; }
         public GameType Type { get; set; }
+        public int QuestionNumber { get; set; }
+
     }
     internal enum GameType
     {

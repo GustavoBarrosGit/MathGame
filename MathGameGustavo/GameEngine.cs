@@ -15,7 +15,12 @@ namespace MathGameGustavo
             int firstNumber;
             int secondNumber;
 
-            for (int i = 0; i < 5; i++)
+            Console.WriteLine("How many questions would you like the game to have?");
+            string numberOfQuestions = Console.ReadLine();
+            numberOfQuestions = helpers.ValidateAnswer(numberOfQuestions);
+
+
+            for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
                 firstNumber = random.Next(1, 10);
                 secondNumber = random.Next(1, 10);
@@ -36,7 +41,7 @@ namespace MathGameGustavo
             }
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine($"The game has ended.\nYour final score is {score}!\n");
-            helpers.AddToHistory(score, GameType.Addition);
+            helpers.AddToHistory(score, GameType.Addition, int.Parse(numberOfQuestions));
             Console.ReadLine();
         }
 
@@ -50,7 +55,11 @@ namespace MathGameGustavo
             int firstNumber;
             int secondNumber;
 
-            for (int i = 0; i < 5; i++)
+            Console.WriteLine("How many questions would you like the game to have?");
+            string numberOfQuestions = Console.ReadLine();
+            numberOfQuestions = helpers.ValidateAnswer(numberOfQuestions);
+
+            for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
                 firstNumber = random.Next(1, 10);
                 secondNumber = random.Next(1, 10);
@@ -69,7 +78,7 @@ namespace MathGameGustavo
                     Console.WriteLine($"Incorrect, The answer was {result}!\n");
                 }
             }
-            helpers.AddToHistory(score, GameType.Subtraction);
+            helpers.AddToHistory(score, GameType.Subtraction, int.Parse(numberOfQuestions));
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine($"The game has ended.\nYour final score is {score}!\n");
 
@@ -86,7 +95,11 @@ namespace MathGameGustavo
             int firstNumber;
             int secondNumber;
 
-            for (int i = 0; i < 5; i++)
+            Console.WriteLine("How many questions would you like the game to have?");
+            string numberOfQuestions = Console.ReadLine();
+            numberOfQuestions = helpers.ValidateAnswer(numberOfQuestions);
+
+            for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
                 firstNumber = random.Next(1, 10);
                 secondNumber = random.Next(1, 10);
@@ -107,7 +120,7 @@ namespace MathGameGustavo
             }
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine($"The game has ended.\nYour final score is {score}!\n");
-            helpers.AddToHistory(score, GameType.Multiplication);
+            helpers.AddToHistory(score, GameType.Multiplication, int.Parse(numberOfQuestions));
             Console.ReadLine();
         }
 
@@ -116,7 +129,11 @@ namespace MathGameGustavo
             Console.Clear();
             int score = 0;
 
-            for (int i = 0; i < 5; i++)
+            Console.WriteLine("How many questions would you like the game to have?");
+            string numberOfQuestions = Console.ReadLine();
+            numberOfQuestions = helpers.ValidateAnswer(numberOfQuestions);
+
+            for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
                 int[] divisionNumbers = helpers.GetDivisionNumbers();
                 int firstNumber = divisionNumbers[0];
@@ -138,7 +155,7 @@ namespace MathGameGustavo
             }
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine($"The game has ended.\nYour final score is {score}!\n");
-            helpers.AddToHistory(score, GameType.Division);
+            helpers.AddToHistory(score, GameType.Division, int.Parse(numberOfQuestions));
             Console.ReadLine();
         }
     }

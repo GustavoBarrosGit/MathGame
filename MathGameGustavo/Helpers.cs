@@ -49,13 +49,14 @@ namespace MathGameGustavo
 
             return result;
         }
-
-        internal void AddToHistory(int gameScore, GameType gameType)
+   
+        internal void AddToHistory(int gameScore, GameType gameType, int questionNumber)
         {
             games.Add(new Game{
                 Date = DateTime.Now,
                 Score = gameScore,
                 Type = gameType,
+                QuestionNumber = questionNumber,
             });
             //games.Add($"{DateTime.Now.ToShortDateString()}\n{DateTime.Now.ToShortTimeString()}\n{gameType}\nScore:{gameScore}");
         }
@@ -69,7 +70,7 @@ namespace MathGameGustavo
             Console.WriteLine("Game History:\n---------------------------");
             foreach (var game in gamesToPrint)
             {
-                Console.WriteLine($"{game.Date.ToShortDateString()}\n{game.Type}\nScore: {game.Score}");
+                Console.WriteLine($"{game.Date.ToShortDateString()}\n{game.Type}\nScore: {game.Score} / {game.QuestionNumber}");
                 Console.WriteLine("---------------------------");
             }
             Console.ReadLine();
