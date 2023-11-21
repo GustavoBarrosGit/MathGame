@@ -1,10 +1,14 @@
 ﻿using MathGameGustavo.Models;
+using System.Diagnostics;
+
 namespace MathGameGustavo
 {
     internal class GameEngine
     {
         Helpers helpers = new Helpers();
 
+        Stopwatch stopwatch = new Stopwatch();
+  
         internal void AdditionGame(string message)  
         {
             Console.Clear();
@@ -17,6 +21,8 @@ namespace MathGameGustavo
 
             string difficultyLevel = helpers.DifficultyMenu();
             string numberOfQuestions = helpers.QuestionNumber();
+
+            stopwatch.Start();
 
             for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
@@ -39,9 +45,12 @@ namespace MathGameGustavo
                     Console.WriteLine($"Incorrect, The answer was {result}!\n");
                 }
             }
+            stopwatch.Stop();
+            long timePassed = stopwatch.ElapsedMilliseconds / 1000;
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine($"The game has ended.\nYour final score is {score}!\n");
-            helpers.AddToHistory(score, GameType.Addition, int.Parse(numberOfQuestions));
+            Console.WriteLine($"Elapsed time: {timePassed} Seconds");
+            helpers.AddToHistory(score, GameType.Addition, int.Parse(numberOfQuestions), timePassed);
             Console.ReadLine();
         }
 
@@ -57,6 +66,8 @@ namespace MathGameGustavo
 
             string difficultyLevel = helpers.DifficultyMenu();
             string numberOfQuestions = helpers.QuestionNumber();
+
+            stopwatch.Start();
 
             for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
@@ -79,10 +90,13 @@ namespace MathGameGustavo
                     Console.WriteLine($"Incorrect, The answer was {result}!\n");
                 }
             }
-            helpers.AddToHistory(score, GameType.Subtraction, int.Parse(numberOfQuestions));
+            stopwatch.Stop();
+            long timePassed = stopwatch.ElapsedMilliseconds / 1000;
+
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine($"The game has ended.\nYour final score is {score}!\n");
-
+            Console.WriteLine($"Elapsed time: {timePassed} Seconds");
+            helpers.AddToHistory(score, GameType.Subtraction, int.Parse(numberOfQuestions), timePassed);
             Console.ReadLine();
         }
 
@@ -98,6 +112,8 @@ namespace MathGameGustavo
 
             string difficultyLevel = helpers.DifficultyMenu();
             string numberOfQuestions = helpers.QuestionNumber();
+
+            stopwatch.Start();
 
             for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
@@ -120,9 +136,13 @@ namespace MathGameGustavo
                     Console.WriteLine($"Incorrect, The answer was {result}!\n");
                 }
             }
+            stopwatch.Stop();
+            long timePassed = stopwatch.ElapsedMilliseconds / 1000;
+
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine($"The game has ended.\nYour final score is {score}!\n");
-            helpers.AddToHistory(score, GameType.Multiplication, int.Parse(numberOfQuestions));
+            Console.WriteLine($"Elapsed time: {timePassed} Seconds");
+            helpers.AddToHistory(score, GameType.Multiplication, int.Parse(numberOfQuestions), timePassed);
             Console.ReadLine();
         }
 
@@ -131,6 +151,8 @@ namespace MathGameGustavo
             Console.Clear();
             int score = 0;
             string numberOfQuestions = helpers.QuestionNumber();
+
+            stopwatch.Start();
 
             for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
@@ -152,9 +174,13 @@ namespace MathGameGustavo
                     Console.WriteLine($"Incorrect, The answer was {result}!\n");
                 }
             }
+            stopwatch.Stop();
+            long timePassed = stopwatch.ElapsedMilliseconds / 1000;
+
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine($"The game has ended.\nYour final score is {score}!\n");
-            helpers.AddToHistory(score, GameType.Division, int.Parse(numberOfQuestions));
+            Console.WriteLine($"Elapsed time: {timePassed} Seconds");
+            helpers.AddToHistory(score, GameType.Division, int.Parse(numberOfQuestions), timePassed);
             Console.ReadLine();
         }
     }

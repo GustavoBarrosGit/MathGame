@@ -36,7 +36,7 @@ namespace MathGameGustavo
             return result;
         }
 
-        internal void AddToHistory(int gameScore, GameType gameType, int questionNumber)
+        internal void AddToHistory(int gameScore, GameType gameType, int questionNumber, long timePassed)
         {
             games.Add(new Game
             {
@@ -44,6 +44,7 @@ namespace MathGameGustavo
                 Score = gameScore,
                 Type = gameType,
                 QuestionNumber = questionNumber,
+                TimeElapsed = timePassed,
             });
         }
 
@@ -56,7 +57,7 @@ namespace MathGameGustavo
             Console.WriteLine("Game History:\n---------------------------");
             foreach (var game in gamesToPrint)
             {
-                Console.WriteLine($"{game.Date.ToShortDateString()}\n{game.Type}\nScore: {game.Score} / {game.QuestionNumber}");
+                Console.WriteLine($"{game.Date.ToShortDateString()}\n{game.Type}\nScore: {game.Score} / {game.QuestionNumber}\n{game.TimeElapsed} Seconds!");
                 Console.WriteLine("---------------------------");
             }
             Console.ReadLine();
