@@ -1,4 +1,5 @@
 ﻿using MathGameGustavo.Models;
+using System;
 
 namespace MathGameGustavo
 {
@@ -6,21 +7,6 @@ namespace MathGameGustavo
     {
         internal static List<Game> games = new List<Game>()
         {
-            /* Game Examples for Linq
-        new Game { Date = DateTime.Now.AddDays(1), Type = GameType.Addition, Score = 5 },
-        new Game { Date = DateTime.Now.AddDays(2), Type = GameType.Multiplication, Score = 4 },
-        new Game { Date = DateTime.Now.AddDays(3), Type = GameType.Division, Score = 4 },
-        new Game { Date = DateTime.Now.AddDays(4), Type = GameType.Subtraction, Score = 3 },
-        new Game { Date = DateTime.Now.AddDays(5), Type = GameType.Addition, Score = 1 },
-        new Game { Date = DateTime.Now.AddDays(6), Type = GameType.Multiplication, Score = 2 },
-        new Game { Date = DateTime.Now.AddDays(7), Type = GameType.Division, Score = 3 },
-        new Game { Date = DateTime.Now.AddDays(8), Type = GameType.Subtraction, Score = 4 },
-        new Game { Date = DateTime.Now.AddDays(9), Type = GameType.Addition, Score = 4 },
-        new Game { Date = DateTime.Now.AddDays(10), Type = GameType.Multiplication, Score = 1 },
-        new Game { Date = DateTime.Now.AddDays(11), Type = GameType.Subtraction, Score = 0 },
-        new Game { Date = DateTime.Now.AddDays(12), Type = GameType.Division, Score = 2 },
-        new Game { Date = DateTime.Now.AddDays(13), Type = GameType.Subtraction, Score = 5 },
-            */
         };
 
         internal int[] GetDivisionNumbers()
@@ -49,16 +35,16 @@ namespace MathGameGustavo
 
             return result;
         }
-   
+
         internal void AddToHistory(int gameScore, GameType gameType, int questionNumber)
         {
-            games.Add(new Game{
+            games.Add(new Game
+            {
                 Date = DateTime.Now,
                 Score = gameScore,
                 Type = gameType,
                 QuestionNumber = questionNumber,
             });
-            //games.Add($"{DateTime.Now.ToShortDateString()}\n{DateTime.Now.ToShortTimeString()}\n{gameType}\nScore:{gameScore}");
         }
 
         internal void PrintGames()
@@ -86,6 +72,16 @@ namespace MathGameGustavo
             return answer;
         }
 
+        internal string? ValidateDifficulty(string answer)
+        {
+            while ((string.IsNullOrEmpty(answer) || !Int32.TryParse(answer, out _) || (int.Parse(answer) < 1 || int.Parse(answer) > 3)))
+            {
+                Console.WriteLine("Your answer needs to be an integer between 1 and 3. Try again.");
+                answer = Console.ReadLine();
+            }
+            return answer;
+        }
+
         internal string GetName()
         {
             Console.WriteLine("Please type your name:");
@@ -99,5 +95,87 @@ namespace MathGameGustavo
             return name;
         }
 
+        internal string QuestionNumber()
+        {
+            Console.WriteLine("How many questions would you like the game to have?");
+            string numberOfQuestions = Console.ReadLine();
+            numberOfQuestions = ValidateAnswer(numberOfQuestions);
+            Console.Clear();
+            return numberOfQuestions;
+        }
+
+        internal string DifficultyMenu()
+        {
+            int diff = 0;
+            string difficultyLevel;
+
+                Console.WriteLine(@$"Select the game Difficulty Level:
+        1 - Easy
+        2 - Medium
+        3 - Hard");
+                difficultyLevel = Console.ReadLine();
+                difficultyLevel = ValidateDifficulty(difficultyLevel);
+                diff = int.Parse(difficultyLevel);
+            Console.Clear();
+              
+            return (difficultyLevel);
+        }
+
+        internal int[] DifficultyNumberGen(string difficultyLevel)
+        {
+            bool chooseLevel = true;
+            int[] numbers = null;
+            
+                switch (difficultyLevel.ToLower().Trim())
+                {
+                    case "1":
+                        numbers = EasyLevel();
+                        chooseLevel = false;
+                        break;
+                    case "2":
+                        numbers = MediumLevel();
+                        chooseLevel = false;
+                        break;
+                    case "3":
+                        numbers = HardLevel();
+                        chooseLevel = false;
+                        break;
+                }
+              
+            return numbers;
+        }
+
+        private int[] EasyLevel()
+        {
+            var random = new Random();
+            int firstNumber = random.Next(1, 6);
+            int secondNumber = random.Next(1, 6);
+
+            int[] numbers = { firstNumber, secondNumber };
+
+            return numbers;
+        }
+
+        private int[] MediumLevel()
+        {
+            var random = new Random();
+            int firstNumber = random.Next(1, 11);
+            int secondNumber = random.Next(1, 11);
+
+            int[] numbers = { firstNumber, secondNumber };
+
+            return numbers;
+        }
+
+        private int[] HardLevel()
+        {
+            var random = new Random();
+            int firstNumber = random.Next(1, 16);
+            int secondNumber = random.Next(1, 16);
+
+            int[] numbers = { firstNumber, secondNumber };
+
+            return numbers;
+        }
     }
 }

@@ -15,15 +15,15 @@ namespace MathGameGustavo
             int firstNumber;
             int secondNumber;
 
-            Console.WriteLine("How many questions would you like the game to have?");
-            string numberOfQuestions = Console.ReadLine();
-            numberOfQuestions = helpers.ValidateAnswer(numberOfQuestions);
-
+            string difficultyLevel = helpers.DifficultyMenu();
+            string numberOfQuestions = helpers.QuestionNumber();
 
             for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
-                firstNumber = random.Next(1, 10);
-                secondNumber = random.Next(1, 10);
+                int[] difficulty = helpers.DifficultyNumberGen(difficultyLevel);
+                firstNumber = difficulty[0];
+                secondNumber = difficulty[1];
+
                 Console.WriteLine($"{firstNumber} + {secondNumber} ?");
                 int result = firstNumber + secondNumber;
                 string answer = Console.ReadLine();
@@ -45,7 +45,7 @@ namespace MathGameGustavo
             Console.ReadLine();
         }
 
-        internal void SubtractionGame(string message)   
+        internal void SubtractionGame(string message)
         {
             Console.Clear();
             Console.WriteLine(message);
@@ -55,14 +55,15 @@ namespace MathGameGustavo
             int firstNumber;
             int secondNumber;
 
-            Console.WriteLine("How many questions would you like the game to have?");
-            string numberOfQuestions = Console.ReadLine();
-            numberOfQuestions = helpers.ValidateAnswer(numberOfQuestions);
+            string difficultyLevel = helpers.DifficultyMenu();
+            string numberOfQuestions = helpers.QuestionNumber();
 
             for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
-                firstNumber = random.Next(1, 10);
-                secondNumber = random.Next(1, 10);
+                int[] difficulty = helpers.DifficultyNumberGen(difficultyLevel);
+                firstNumber = difficulty[0];
+                secondNumber = difficulty[1];
+
                 Console.WriteLine($"{firstNumber} - {secondNumber} ?");
                 int result = firstNumber - secondNumber;
                 string answer = Console.ReadLine();
@@ -95,14 +96,15 @@ namespace MathGameGustavo
             int firstNumber;
             int secondNumber;
 
-            Console.WriteLine("How many questions would you like the game to have?");
-            string numberOfQuestions = Console.ReadLine();
-            numberOfQuestions = helpers.ValidateAnswer(numberOfQuestions);
+            string difficultyLevel = helpers.DifficultyMenu();
+            string numberOfQuestions = helpers.QuestionNumber();
 
             for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
-                firstNumber = random.Next(1, 10);
-                secondNumber = random.Next(1, 10);
+                int[] difficulty = helpers.DifficultyNumberGen(difficultyLevel);
+                firstNumber = difficulty[0];
+                secondNumber = difficulty[1];
+
                 Console.WriteLine($"{firstNumber} X {secondNumber} ?");
                 int result = firstNumber * secondNumber;
                 string answer = Console.ReadLine();
@@ -128,10 +130,7 @@ namespace MathGameGustavo
         {
             Console.Clear();
             int score = 0;
-
-            Console.WriteLine("How many questions would you like the game to have?");
-            string numberOfQuestions = Console.ReadLine();
-            numberOfQuestions = helpers.ValidateAnswer(numberOfQuestions);
+            string numberOfQuestions = helpers.QuestionNumber();
 
             for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {

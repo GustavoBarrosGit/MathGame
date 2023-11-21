@@ -27,22 +27,22 @@
                 switch (gameSelected.Trim().ToLower())
                 {
                     case "a":
-                        engine.AdditionGame("Addition game");
+                        engine.AdditionGame("Addition game:\n");
                         break;
                     case "s":
-                        engine.SubtractionGame("Subtraction game");
+                        engine.SubtractionGame("Subtraction game:\n");
                         break;
                     case "m":
-                        engine.MultiplicationGame("Multiplication game");
+                        engine.MultiplicationGame("Multiplication game:\n");
                         break;
                     case "d":
-                        engine.DivisionGame("Division game");
+                        engine.DivisionGame("Division game:\n");
                         break;
                     case "v":
                         helpers.PrintGames();
                         break;
                     case "q":
-                        Console.WriteLine("Quitting game");
+                        Console.WriteLine("\nQuitting game\n");
                         isGameOn = false;
                         break;
                     default:
