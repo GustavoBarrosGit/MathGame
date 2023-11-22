@@ -1,5 +1,0 @@
-C:\Users\2000g\Music\ProjectBuildsAcademy\MathGameGustavoBuild\MathGameGustavo.exe
-C:\Users\2000g\Music\ProjectBuildsAcademy\MathGameGustavoBuild\MathGameGustavo.dll
-C:\Users\2000g\Music\ProjectBuildsAcademy\MathGameGustavoBuild\MathGameGustavo.deps.json
-C:\Users\2000g\Music\ProjectBuildsAcademy\MathGameGustavoBuild\MathGameGustavo.runtimeconfig.json
-C:\Users\2000g\Music\ProjectBuildsAcademy\MathGameGustavoBuild\MathGameGustavo.pdb
