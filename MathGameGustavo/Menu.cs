@@ -19,6 +19,7 @@
         S - Subtraction
         M - Multiplication
         D - Division
+        R - Random
         V - View Previous Games
         Q - Quit game");
 
@@ -37,6 +38,9 @@
                         break;
                     case "d":
                         engine.DivisionGame("Division game:\n");
+                        break;
+                    case "r":
+                        engine.RandomGame("Random Game:\n");
                         break;
                     case "v":
                         helpers.PrintGames();

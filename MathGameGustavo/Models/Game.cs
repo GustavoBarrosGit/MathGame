@@ -15,5 +15,6 @@
         Subtraction,
         Multiplication,
         Division,
+        Random,
     }
 }
