@@ -1,5 +1,4 @@
 ﻿using MathGameGustavo.Models;
-using System;
 
 namespace MathGameGustavo
 {
@@ -26,13 +25,6 @@ namespace MathGameGustavo
             result[0] = firstNumber;
             result[1] = secondNumber;
 
-            /*
-            foreach(int number in result)
-            {
-                Console.WriteLine(number);   
-            }
-            */
-
             return result;
         }
 
@@ -51,7 +43,6 @@ namespace MathGameGustavo
         internal void PrintGames()
         {
             IEnumerable<Game> gamesToPrint = games.OrderByDescending(x => x.Score);
-
 
             Console.Clear();
             Console.WriteLine("Game History:\n---------------------------");
@@ -92,7 +83,6 @@ namespace MathGameGustavo
                 Console.WriteLine("Name cant be empty.");
                 name = Console.ReadLine();
             }
-
             return name;
         }
 
@@ -118,7 +108,7 @@ namespace MathGameGustavo
                 difficultyLevel = ValidateDifficulty(difficultyLevel);
                 diff = int.Parse(difficultyLevel);
             Console.Clear();
-              
+
             return (difficultyLevel);
         }
 
@@ -142,15 +132,14 @@ namespace MathGameGustavo
                         chooseLevel = false;
                         break;
                 }
-              
             return numbers;
         }
 
         private int[] EasyLevel()
         {
             var random = new Random();
-            int firstNumber = random.Next(1, 6);
-            int secondNumber = random.Next(1, 6);
+            int firstNumber = random.Next(0, 10);
+            int secondNumber = random.Next(0, 10);
 
             int[] numbers = { firstNumber, secondNumber };
 
@@ -160,8 +149,8 @@ namespace MathGameGustavo
         private int[] MediumLevel()
         {
             var random = new Random();
-            int firstNumber = random.Next(1, 11);
-            int secondNumber = random.Next(1, 11);
+            int firstNumber = random.Next(-5, 10);
+            int secondNumber = random.Next(-5 , 10);
 
             int[] numbers = { firstNumber, secondNumber };
 
@@ -171,8 +160,8 @@ namespace MathGameGustavo
         private int[] HardLevel()
         {
             var random = new Random();
-            int firstNumber = random.Next(1, 16);
-            int secondNumber = random.Next(1, 16);
+            int firstNumber = random.Next(-10, 10);
+            int secondNumber = random.Next(-10, 10);
 
             int[] numbers = { firstNumber, secondNumber };
 

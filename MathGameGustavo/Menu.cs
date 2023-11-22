@@ -6,8 +6,6 @@
         GameEngine engine = new GameEngine();
         internal void ShowMenu(string name, DateTime date)
         {
-
-
             bool isGameOn = true;
 
             do
@@ -53,9 +51,6 @@
                         break;
                 }
             } while (isGameOn);
-
-
-
         }
     }
 }

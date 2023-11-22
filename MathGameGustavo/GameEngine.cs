@@ -197,15 +197,13 @@ namespace MathGameGustavo
             string difficultyLevel = helpers.DifficultyMenu();
             string numberOfQuestions = helpers.QuestionNumber();
 
-
-
             stopwatch.Start();
 
             for (int i = 0; i < int.Parse(numberOfQuestions); i++)
             {
-                int tipoJogo = random.Next(0, 4);
+                int gameType = random.Next(0, 4);
 
-                if (tipoJogo == 0)
+                if (gameType == 0)
                 {
                     int[] difficulty = helpers.DifficultyNumberGen(difficultyLevel);
                     firstNumber = difficulty[0];
@@ -225,7 +223,7 @@ namespace MathGameGustavo
                     {
                         Console.WriteLine($"Incorrect, The answer was {result}!\n");
                     }
-                } else if(tipoJogo == 1)
+                } else if(gameType == 1)
                 {
                     int[] difficulty = helpers.DifficultyNumberGen(difficultyLevel);
                     firstNumber = difficulty[0];
@@ -245,7 +243,7 @@ namespace MathGameGustavo
                     {
                         Console.WriteLine($"Incorrect, The answer was {result}!\n");
                     }
-                } else if (tipoJogo == 2)
+                } else if (gameType == 2)
                 {
                     int[] difficulty = helpers.DifficultyNumberGen(difficultyLevel);
                     firstNumber = difficulty[0];
@@ -265,7 +263,7 @@ namespace MathGameGustavo
                     {
                         Console.WriteLine($"Incorrect, The answer was {result}!\n");
                     }
-                } else if( tipoJogo == 3)
+                } else if( gameType == 3)
                 {
                     int[] divisionNumbers = helpers.GetDivisionNumbers();
                     firstNumber = divisionNumbers[0];
