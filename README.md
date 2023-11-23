@@ -1,6 +1,6 @@
 # Math game
 This is Math Game, an interactive console application built in C#.
-## Functionalities
+## Features
 
 - There are 5 Gamemodes:
     - Addition
