@@ -12,7 +12,8 @@
         - **Division**
         - **Random** (combines all operations)
         
-- **Game History**: Review a detailed history of your previous games, including scores and performance.
+- **Game History**: 
+    - Review a detailed history of your previous games, including scores and performance.
 
 - **Three Difficulty Levels**: 
     - Choose between **Easy**, **Medium**, and **Hard**, scaling the complexity of the questions.
